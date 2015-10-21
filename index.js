@@ -1,7 +1,7 @@
 var aws            = require('aws-sdk');
 var async          = require('async');
-var archiver       = require('archiver')
-var path           = require('path')
+var archiver       = require('archiver');
+var path           = require('path');
 
 var s3 = new aws.S3();
 
@@ -21,7 +21,7 @@ exports.handler = function(event, context) {
   // Stream upload.
   var obj = {
     Bucket: bucket,
-    Key: path.join(keyPrefix, userId + '-' + filename)
+    Key: path.join(keyPrefix, userId + '-' + filename),
     Body: zip
   };
 
